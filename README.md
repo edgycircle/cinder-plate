@@ -19,5 +19,5 @@ brunch watch --server
 If you want to generate a production build (= minified files plus the non-debug version of Ember.js) you have to specify `config-production.coffee` as config file. The generated production build is put into the `production-build` directory.
 
 ```
-brunch build --optimize --config config-production.coffee
+brunch build --config config-production.coffee
 ```
