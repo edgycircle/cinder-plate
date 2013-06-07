@@ -21,7 +21,7 @@
     "uglify-js-brunch": ">= 1.0 < 1.5",
     "clean-css-brunch": ">= 1.0 < 1.5",
     "sass-brunch": "1.5",
-    "ember-handlebars-brunch": "1.0.3"
+    "ember-handlebars-brunch": "1.0.4"
   },
   "devDependencies": {
     "mocha": "0.14.0",
