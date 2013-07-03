@@ -1,8 +1,9 @@
-{config} = require './config'
+config = require('./config').config
+isProductionVendorFile = require('./config').isProductionVendorFile
 
 config.files.javascripts.joinTo =
   'javascripts/app.js': /^app/
-  'javascripts/vendor.js': /^vendor(?!.*ember.js)/
+  'javascripts/vendor.js': (path) -> isProductionVendorFile path
 
 config.optimize = true
 

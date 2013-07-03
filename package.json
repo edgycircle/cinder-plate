@@ -15,12 +15,12 @@
     "start": "brunch watch --server"
   },
   "dependencies": {
-    "javascript-brunch": ">= 1.0 < 1.5",
-    "coffee-script-brunch": ">= 1.0 < 1.5",
-    "css-brunch": ">= 1.0 < 1.5",
-    "uglify-js-brunch": ">= 1.0 < 1.5",
-    "clean-css-brunch": ">= 1.0 < 1.5",
-    "sass-brunch": "1.5",
+    "javascript-brunch": ">= 1.0 < 2.0",
+    "coffee-script-brunch": ">= 1.0 < 2.0",
+    "css-brunch": ">= 1.0 < 2.0",
+    "uglify-js-brunch": ">= 1.0 < 2.0",
+    "clean-css-brunch": ">= 1.0 < 2.0",
+    "sass-brunch": "1.6",
     "ember-handlebars-brunch": "1.0.4"
   },
   "devDependencies": {

@@ -7,15 +7,12 @@ exports.config =
       defaultExtension: 'coffee'
       joinTo:
         'javascripts/app.js': /^app/
-        'javascripts/vendor.js': /^vendor(?!.*ember-production.js)/
+        'javascripts/vendor.js': (path) -> isDevelopmentVendorFile path
       order:
         before: [
-          'vendor/javascripts/jquery-1.8.3.min.js'
-          'vendor/javascripts/handlebars-1.0.0.rc.2.js'
+          'vendor/javascripts/jquery-1.9.1.js'
+          'vendor/javascripts/handlebars-1.0.0-rc.4.js'
           ]
-        after: [
-          'vendor/javascripts/ember-data.js'
-        ]
     stylesheets:
       defaultExtension: 'scss'
       joinTo:
@@ -36,3 +33,25 @@ exports.config =
         return startsWith path.basename(filePath), '_'
 
 startsWith = (string, substring) -> string.lastIndexOf(substring, 0) == 0
+
+developmentVendorJavascripts = [
+  'jquery-1.9.1.js'
+  'ember-1.0.0-rc.6.js'
+  'ember-data-0.13.js'
+  'handlebars-1.0.0-rc.4.js'
+]
+
+productionVendorJavascripts = [
+  'jquery-1.9.1.js'
+  'ember-1.0.0-rc.6.min.js'
+  'ember-data-0.13.min.js'
+  'handlebars-1.0.0-rc.4.js'
+]
+
+isDevelopmentVendorFile = (filePath) ->
+  return false unless startsWith(filePath, 'vendor/')
+  return developmentVendorJavascripts.indexOf(path.basename(filePath)) > -1
+
+exports.isProductionVendorFile = (filePath) ->
+  return false unless startsWith(filePath, 'vendor/')
+  return productionVendorJavascripts.indexOf(path.basename(filePath)) > -1
